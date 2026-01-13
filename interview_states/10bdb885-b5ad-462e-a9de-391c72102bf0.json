@@ -1,0 +1,50 @@
+{
+  "interview_id": "10bdb885-b5ad-462e-a9de-391c72102bf0",
+  "jd": "A Java Developer designs, develops, tests, and maintains Java-based applications, focusing on writing clean, efficient, scalable code for web, mobile, or enterprise systems, working within the full software development lifecycle (SDLC), collaborating with teams, and ensuring high performance and reliability by analyzing requirements, debugging issues, and integrating systems, often using frameworks like Spring and REST APIs. \nKey Responsibilities:\nDesign & Development: Architecting and building new Java applications, contributing to all phases of the SDLC, from concept to deployment.\nCoding: Writing high-quality, efficient, testable, and maintainable Java code.\nTesting & Debugging: Conducting software analysis, debugging, troubleshooting, and fixing issues.\nCollaboration: Working with cross-functional teams (QA, product managers, other engineers) to gather requirements and deliver features.\nPerformance & Optimization: Optimizing applications for speed, scalability, and security.\nDocumentation: Creating technical documentation and user guides.\nIntegration: Integrating applications with external systems and front-end elements. \nKey Skills & Technologies:\nStrong understanding of Java fundamentals and Object-Oriented Programming (OOP).\nExperience with Java EE, Spring Framework, Hibernate, or other relevant frameworks.\nProficiency with RESTful APIs and web services.\nFamiliarity with databases (SQL/NoSQL) and ORM tools.\nExperience with build tools (Maven/Gradle) and version control (Git).\nKnowledge of Agile/Scrum methodologies. \nSenior Java Developer Focus:\nMentoring junior developers.\nLeading project planning and architectural discussions.\nAligning technical solutions with broader business goals.\nManaging large-scale, mission-critical systems. ",
+  "questions": [
+    {
+      "question": "What are the key principles of Object-Oriented Programming (OOP) in Java, and how do you apply them in your code?",
+      "intent_type": "what",
+      "skill_focus": "java fundamentals"
+    },
+    {
+      "question": "Can you describe a scenario where you had to optimize the performance of a Java application, and what steps you took to achieve it?",
+      "intent_type": "when",
+      "skill_focus": "performance optimization"
+    },
+    {
+      "question": "How do you approach debugging and troubleshooting issues in a Java application, and what tools or techniques do you use?",
+      "intent_type": "how",
+      "skill_focus": "testing and debugging"
+    },
+    {
+      "question": "Explain the importance of Agile/Scrum methodologies in software development, and how you have applied them in your previous roles.",
+      "intent_type": "why",
+      "skill_focus": "agile methodologies"
+    },
+    {
+      "question": "Can you walk me through your experience with Spring Framework, including its key components and how you have used it in past projects?",
+      "intent_type": "when",
+      "skill_focus": "spring framework"
+    },
+    {
+      "question": "How do you ensure the security and scalability of a Java application, and what measures do you take to prevent common security vulnerabilities?",
+      "intent_type": "how",
+      "skill_focus": "security and scalability"
+    },
+    {
+      "question": "Describe a situation where you had to lead a project planning and architectural discussion, and how you ensured that the technical solution aligned with broader business goals.",
+      "intent_type": "when",
+      "skill_focus": "project planning and architecture"
+    },
+    {
+      "question": "Can you explain the concept of RESTful APIs and how you have used them in your previous projects, including the benefits and challenges of implementing them?",
+      "intent_type": "what",
+      "skill_focus": "restful apis"
+    }
+  ],
+  "current_index": 0,
+  "history": [],
+  "status": "running",
+  "version": 1
+}

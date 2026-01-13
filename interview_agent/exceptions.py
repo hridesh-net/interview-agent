@@ -1,0 +1,2 @@
+class SkillValidationError(Exception):
+    pass

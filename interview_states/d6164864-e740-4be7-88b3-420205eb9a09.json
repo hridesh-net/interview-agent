@@ -1,0 +1,552 @@
+{
+  "interview_id": "d6164864-e740-4be7-88b3-420205eb9a09",
+  "jd": "A Java Developer designs, develops, tests, and maintains Java-based applications, focusing on writing clean, efficient, scalable code for web, mobile, or enterprise systems, working within the full software development lifecycle (SDLC), collaborating with teams, and ensuring high performance and reliability by analyzing requirements, debugging issues, and integrating systems, often using frameworks like Spring and REST APIs. \nKey Responsibilities:\nDesign & Development: Architecting and building new Java applications, contributing to all phases of the SDLC, from concept to deployment.\nCoding: Writing high-quality, efficient, testable, and maintainable Java code.\nTesting & Debugging: Conducting software analysis, debugging, troubleshooting, and fixing issues.\nCollaboration: Working with cross-functional teams (QA, product managers, other engineers) to gather requirements and deliver features.\nPerformance & Optimization: Optimizing applications for speed, scalability, and security.\nDocumentation: Creating technical documentation and user guides.\nIntegration: Integrating applications with external systems and front-end elements. \nKey Skills & Technologies:\nStrong understanding of Java fundamentals and Object-Oriented Programming (OOP).\nExperience with Java EE, Spring Framework, Hibernate, or other relevant frameworks.\nProficiency with RESTful APIs and web services.\nFamiliarity with databases (SQL/NoSQL) and ORM tools.\nExperience with build tools (Maven/Gradle) and version control (Git).\nKnowledge of Agile/Scrum methodologies. \nSenior Java Developer Focus:\nMentoring junior developers.\nLeading project planning and architectural discussions.\nAligning technical solutions with broader business goals.\nManaging large-scale, mission-critical systems. ",
+  "questions": [
+    {
+      "question": "What are the key principles of Object-Oriented Programming (OOP) in Java, and how do you apply them in your code?",
+      "intent_type": "what",
+      "skill_focus": "java fundamentals"
+    },
+    {
+      "question": "Can you walk me through a specific Java code example where you applied abstraction, inheritance, and encapsulation to solve a real-world problem?",
+      "intent_type": "when",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you elaborate on how you would implement abstraction, inheritance, and encapsulation in the CardDetails class, and what specific design decisions you would make?",
+      "intent_type": "how",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you provide a concrete example of how you would apply abstraction, inheritance, and encapsulation in the CardDetails class, including specific design decisions?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you walk me through a step-by-step design process for the CardDetails class, including how you would apply abstraction, inheritance, and encapsulation, and provide specific code examples to illustrate your approach?",
+      "intent_type": "how",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you provide a simple example of a CardDetails class that demonstrates how you would apply abstraction, inheritance, and encapsulation, even if it's a simplified version?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you explain how you would implement abstraction, inheritance, and encapsulation in the CardDetails class, and provide a concrete example of how these concepts would be applied?",
+      "intent_type": "how",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you provide a concrete example of how you would implement abstraction, inheritance, and encapsulation in the CardDetails class, and explain how these concepts would help in a real-world scenario?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you walk me through a step-by-step explanation of how you would implement abstraction, inheritance, and encapsulation in the CardDetails class, including the code and its application in a real-world scenario?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you provide a clear, step-by-step explanation of how you would implement abstraction, inheritance, and encapsulation in the CardDetails class, including code and a real-world application scenario?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you provide a specific example of a real-world application where you would use abstraction, inheritance, and encapsulation in a class, and how you would implement it?",
+      "intent_type": "how",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you walk me through a real-world scenario where you would need to validate something, and how you would approach implementing the validation logic using abstraction, inheritance, and encapsulation?",
+      "intent_type": "when",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you provide a real-world example of a payment processing system where you would need to validate credit card information, and explain how you would use abstraction, inheritance, and encapsulation to implement the validation logic?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you describe a high-level design for a credit card validation module that uses abstraction, inheritance, and encapsulation?",
+      "intent_type": "how",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you provide a clear and concise explanation of how abstraction, inheritance, and encapsulation are applied in the design of a credit card validation module?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you provide a specific example of how abstraction is used in the design of the credit card validation module, and how it helps in creating a flexible validation framework?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you elaborate on how inheritance helps in creating a flexible validation framework for the credit card validation module, and provide a concrete example of its application?",
+      "intent_type": "how",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you provide a concrete example of how inheritance is used in the credit card validation module to create a flexible validation framework?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you explain how you would approach optimizing the inheritance-based validation framework to handle different types of credit card validation rules?",
+      "intent_type": "how",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you describe a scenario where you had to optimize the performance of a Java application, and what steps you took to achieve it?",
+      "intent_type": "when",
+      "skill_focus": "performance & optimization"
+    },
+    {
+      "question": "Can you elaborate on what you mean by 'no'? Are you saying you've never had to optimize a Java application, or is there something specific you're referring to?",
+      "intent_type": "how",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you clarify what you mean by 'I don't want to continue for the interview'? Is there something specific that's causing you to feel this way?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you help me understand what specifically is causing you to feel this way about continuing the interview?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you help me understand what's causing you to feel the need to leave the interview right now?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Explain the differences between Spring Framework and Hibernate, and when would you choose to use each in a project?",
+      "intent_type": "what",
+      "skill_focus": "java ee frameworks"
+    },
+    {
+      "question": "How do you approach debugging and troubleshooting issues in a Java application, and what tools do you use to aid in the process?",
+      "intent_type": "how",
+      "skill_focus": "testing & debugging"
+    },
+    {
+      "question": "Can you walk me through your experience with Agile/Scrum methodologies, and how you've applied them in previous projects?",
+      "intent_type": "when",
+      "skill_focus": "agile/scrum methodologies"
+    },
+    {
+      "question": "Describe a situation where you had to integrate a Java application with an external system or front-end element, and how you handled any challenges that arose?",
+      "intent_type": "when",
+      "skill_focus": "integration"
+    },
+    {
+      "question": "How do you ensure that your Java code is maintainable, efficient, and scalable, and what best practices do you follow to achieve this?",
+      "intent_type": "how",
+      "skill_focus": "coding"
+    },
+    {
+      "question": "Can you explain the importance of technical documentation and user guides in a Java project, and how you've created effective documentation in the past?",
+      "intent_type": "why",
+      "skill_focus": "documentation"
+    }
+  ],
+  "current_index": 23,
+  "history": [
+    {
+      "question": "What are the key principles of Object-Oriented Programming (OOP) in Java, and how do you apply them in your code?",
+      "answer": "Abstraction, Inheritance, Class, Encapsulation",
+      "intent_analysis": {
+        "intent_type": "what",
+        "intent_matched": true,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer provides a list of key principles of OOP in Java, but it lacks explanation and application of these principles in code. It only provides a list of concepts without describing how they are used or implemented."
+      },
+      "score": {
+        "intent_score": 0.2,
+        "content_score": 0.3,
+        "feedforward": "Provide a clear explanation of how you apply the key principles of OOP in Java in your code, including specific examples to demonstrate your understanding."
+      },
+      "timestamp": 1768272087.167385
+    },
+    {
+      "question": "Can you walk me through a specific Java code example where you applied abstraction, inheritance, and encapsulation to solve a real-world problem?",
+      "answer": "public class CardDetails {",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not provide a step-by-step explanation or a clear procedural strategy for applying abstraction, inheritance, and encapsulation. It appears to be a partial class definition rather than a code example."
+      },
+      "score": {
+        "intent_score": 0.2,
+        "content_score": 0.3,
+        "feedforward": "Provide a clear, step-by-step code example that demonstrates abstraction, inheritance, and encapsulation in a real-world context. Ensure the example is complete and includes a procedural strategy for applying these concepts."
+      },
+      "timestamp": 1768272150.997458
+    },
+    {
+      "question": "Can you elaborate on how you would implement abstraction, inheritance, and encapsulation in the CardDetails class, and what specific design decisions you would make?",
+      "answer": "    private String cardNumber;",
+      "intent_analysis": {
+        "intent_type": "what",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer only provides a field declaration for the card number, but does not elaborate on how abstraction, inheritance, and encapsulation would be implemented in the CardDetails class, nor does it provide any design decisions."
+      },
+      "score": {
+        "intent_score": 0.2,
+        "content_score": 0.2,
+        "feedforward": "Consider providing a clear explanation of how you would implement abstraction, inheritance, and encapsulation in the CardDetails class, including specific design decisions. You could also provide an example of how these concepts would be applied in the context of the class."
+      },
+      "timestamp": 1768272159.505065
+    },
+    {
+      "question": "Can you provide a concrete example of how you would apply abstraction, inheritance, and encapsulation in the CardDetails class, including specific design decisions?",
+      "answer": "    private String cvv;",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not provide a concrete example of how to apply abstraction, inheritance, and encapsulation in the CardDetails class. It only provides a single field declaration, which is not a step-by-step explanation or a clear procedural strategy."
+      },
+      "score": {
+        "intent_score": 0.2,
+        "content_score": 0.3,
+        "feedforward": "Provide a concrete example of how to apply abstraction, inheritance, and encapsulation in the CardDetails class, including specific design decisions. This could be achieved by providing a step-by-step explanation, including specific code examples or design patterns, and explaining the reasoning behind the design decisions."
+      },
+      "timestamp": 1768272169.808491
+    },
+    {
+      "question": "Can you walk me through a step-by-step design process for the CardDetails class, including how you would apply abstraction, inheritance, and encapsulation, and provide specific code examples to illustrate your approach?",
+      "answer": "",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not provide a step-by-step design process for the CardDetails class, nor does it include specific code examples to illustrate the approach. The expected intent was to provide a structured explanation of how to apply abstraction, inheritance, and encapsulation, but the answer is empty."
+      },
+      "score": {
+        "intent_score": 0.2,
+        "content_score": 0.0,
+        "feedforward": "Provide a step-by-step design process for the CardDetails class, including specific code examples to illustrate the approach. Focus on explaining how to apply abstraction, inheritance, and encapsulation."
+      },
+      "timestamp": 1768272179.2859771
+    },
+    {
+      "question": "Can you provide a simple example of a CardDetails class that demonstrates how you would apply abstraction, inheritance, and encapsulation, even if it's a simplified version?",
+      "answer": "    public CardDetails(String cardNumber, String cvv) {",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not demonstrate how to apply abstraction, inheritance, and encapsulation. It only starts to define a constructor for a CardDetails class, but does not provide any explanation or implementation of the requested concepts."
+      },
+      "score": {
+        "intent_score": 0.2,
+        "content_score": 0.3,
+        "feedforward": "Provide a clear explanation of how to apply abstraction, inheritance, and encapsulation, along with a concrete example or implementation of a CardDetails class."
+      },
+      "timestamp": 1768272189.280981
+    },
+    {
+      "question": "Can you explain how you would implement abstraction, inheritance, and encapsulation in the CardDetails class, and provide a concrete example of how these concepts would be applied?",
+      "answer": "        this.cardNumber = cardNumber;",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not align with the expected intent of explaining how to implement abstraction, inheritance, and encapsulation in the CardDetails class. The provided code snippet only assigns a value to a property and does not demonstrate any of the mentioned concepts."
+      },
+      "score": {
+        "intent_score": 0.0,
+        "content_score": 0.0,
+        "feedforward": "To improve the answer, provide a concrete example that demonstrates the implementation of abstraction, inheritance, and encapsulation in the CardDetails class. This could involve explaining how these concepts are applied in a real-world scenario, such as using inheritance to create a base class for different types of cards or using encapsulation to hide sensitive information like the card number."
+      },
+      "timestamp": 1768272198.1070778
+    },
+    {
+      "question": "Can you provide a concrete example of how you would implement abstraction, inheritance, and encapsulation in the CardDetails class, and explain how these concepts would help in a real-world scenario?",
+      "answer": "        this.cvv = cvv;",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not match the expected intent of 'how' as it only provides a single line of code without explaining the implementation of abstraction, inheritance, and encapsulation. It also does not provide a concrete example or a real-world scenario to demonstrate the application of these concepts."
+      },
+      "score": {
+        "intent_score": 0.0,
+        "content_score": 0.2,
+        "feedforward": "Provide a concrete example of how you would implement abstraction, inheritance, and encapsulation in the CardDetails class, and explain how these concepts would help in a real-world scenario. Include a detailed explanation of the code and its application."
+      },
+      "timestamp": 1768272209.3160698
+    },
+    {
+      "question": "Can you walk me through a step-by-step explanation of how you would implement abstraction, inheritance, and encapsulation in the CardDetails class, including the code and its application in a real-world scenario?",
+      "answer": "    }",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not match the expected intent of the question as it does not provide a step-by-step explanation or code for implementing abstraction, inheritance, and encapsulation in the CardDetails class. The provided response is incomplete and does not demonstrate any understanding of the concepts."
+      },
+      "score": {
+        "intent_score": 0.0,
+        "content_score": 0.0,
+        "feedforward": "Provide a clear, step-by-step explanation of how you would implement abstraction, inheritance, and encapsulation in the CardDetails class, including code and a real-world application scenario. Ensure the response is well-structured and demonstrates a thorough understanding of the concepts."
+      },
+      "timestamp": 1768272216.839199
+    },
+    {
+      "question": "Can you provide a clear, step-by-step explanation of how you would implement abstraction, inheritance, and encapsulation in the CardDetails class, including code and a real-world application scenario?",
+      "answer": "",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer is empty, which means it does not provide any explanation or code for implementing abstraction, inheritance, and encapsulation in the CardDetails class. It also lacks a real-world application scenario, making it impossible to assess the candidate's understanding of the concepts."
+      },
+      "score": {
+        "intent_score": 0.2,
+        "content_score": 0.0,
+        "feedforward": "Provide a clear, step-by-step explanation of how to implement abstraction, inheritance, and encapsulation in the CardDetails class, including code examples and a real-world application scenario."
+      },
+      "timestamp": 1768272225.619594
+    },
+    {
+      "question": "Can you provide a specific example of a real-world application where you would use abstraction, inheritance, and encapsulation in a class, and how you would implement it?",
+      "answer": "    public boolean validate() {",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not match the expected intent of the question, which is to provide a specific example of a real-world application and explain how to implement it. The provided code snippet appears to be a method implementation, but it does not address the question's requirements."
+      },
+      "score": {
+        "intent_score": 0.2,
+        "content_score": 0.15,
+        "feedforward": "Provide a concrete example of a class that utilizes abstraction, inheritance, and encapsulation, and explain how you would implement it in a real-world scenario."
+      },
+      "timestamp": 1768272236.57838
+    },
+    {
+      "question": "Can you walk me through a real-world scenario where you would need to validate something, and how you would approach implementing the validation logic using abstraction, inheritance, and encapsulation?",
+      "answer": "        return cardNumber.length() == 16 && cvv.length() == 3;",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": true,
+        "analysis": "The answer does not match the expected intent of the question, which is to provide a real-world scenario and explain how to implement validation logic using abstraction, inheritance, and encapsulation. Instead, it appears to be a snippet of code that checks the length of a card number and CVV. The answer does not provide any context or explanation of how these concepts would be applied in a real-world scenario."
+      },
+      "score": {
+        "intent_score": 0.25,
+        "content_score": 0.55,
+        "feedforward": "Consider a real-world example, such as a payment processing system, where you would need to validate credit card information. Explain how you would use abstraction, inheritance, and encapsulation to implement the validation logic in a way that is modular, maintainable, and efficient."
+      },
+      "timestamp": 1768272248.437343
+    },
+    {
+      "question": "Can you provide a real-world example of a payment processing system where you would need to validate credit card information, and explain how you would use abstraction, inheritance, and encapsulation to implement the validation logic?",
+      "answer": "    }",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer is empty and does not provide any explanation or example of how to implement abstraction, inheritance, and encapsulation for credit card validation logic."
+      },
+      "score": {
+        "intent_score": 0.2,
+        "content_score": 0.1,
+        "feedforward": "Provide a real-world example of a payment processing system and explain how abstraction, inheritance, and encapsulation can be used to implement credit card validation logic."
+      },
+      "timestamp": 1768272257.371727
+    },
+    {
+      "question": "Can you describe a high-level design for a credit card validation module that uses abstraction, inheritance, and encapsulation?",
+      "answer": "}",
+      "intent_analysis": {
+        "intent_type": "what",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not provide any information about a high-level design for a credit card validation module. It appears to be an empty object, which does not match the expected intent of the question."
+      },
+      "score": {
+        "intent_score": 0.4,
+        "content_score": 0.0,
+        "feedforward": "Please provide a detailed explanation of a high-level design for a credit card validation module, including how abstraction, inheritance, and encapsulation are applied. Ensure your answer is clear, specific, and provides relevant information."
+      },
+      "timestamp": 1768272271.038579
+    },
+    {
+      "question": "Can you provide a clear and concise explanation of how abstraction, inheritance, and encapsulation are applied in the design of a credit card validation module?",
+      "answer": "Abstraction \u2192 flexible validation framework",
+      "intent_analysis": {
+        "intent_type": "what",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer lacks a clear explanation of how abstraction, inheritance, and encapsulation are applied in the design of a credit card validation module. It only mentions abstraction, but does not provide any details on how it is used in the context of the module."
+      },
+      "score": {
+        "intent_score": 0.2,
+        "content_score": 0.3,
+        "feedforward": "Provide a clear explanation of how abstraction, inheritance, and encapsulation are applied in the design of a credit card validation module, including specific examples or code snippets to illustrate the concepts."
+      },
+      "timestamp": 1768272412.2765381
+    },
+    {
+      "question": "Can you provide a specific example of how abstraction is used in the design of the credit card validation module, and how it helps in creating a flexible validation framework?",
+      "answer": "\t\u2022\tInheritance \u2192 extensible support for multiple card types",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": true,
+        "intent_fulfillment": "partial",
+        "example_provided": true,
+        "analysis": "The answer partially matches the expected intent of 'how' by mentioning a specific technique (inheritance) used in abstraction. However, it lacks a detailed explanation of how this technique helps in creating a flexible validation framework, which is a crucial aspect of the 'how' intent."
+      },
+      "score": {
+        "intent_score": 0.6,
+        "content_score": 0.45,
+        "feedforward": "Provide a real-world example of how inheritance is used in the credit card validation module to create a flexible validation framework, and explain in detail how this technique helps in achieving flexibility."
+      },
+      "timestamp": 1768272422.493546
+    },
+    {
+      "question": "Can you elaborate on how inheritance helps in creating a flexible validation framework for the credit card validation module, and provide a concrete example of its application?",
+      "answer": "\t\u2022\tEncapsulation \u2192 secure handling of sensitive data",
+      "intent_analysis": {
+        "intent_type": "what",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not match the expected intent of 'how' as it does not provide a step-by-step explanation or a clear procedural strategy. Instead, it provides a concept (encapsulation) related to object-oriented programming, but does not address the question about inheritance and its application in the credit card validation module."
+      },
+      "score": {
+        "intent_score": 0.2,
+        "content_score": 0.4,
+        "feedforward": "Provide a step-by-step explanation of how inheritance helps in creating a flexible validation framework for the credit card validation module, and include a concrete example of its application."
+      },
+      "timestamp": 1768272432.073445
+    },
+    {
+      "question": "Can you provide a concrete example of how inheritance is used in the credit card validation module to create a flexible validation framework?",
+      "answer": "",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not provide any information about how inheritance is used in the credit card validation module, making it impossible to evaluate intent fulfillment."
+      },
+      "score": {
+        "intent_score": 0.0,
+        "content_score": 0.0,
+        "feedforward": "Provide a concrete example of how inheritance is used in the credit card validation module to create a flexible validation framework."
+      },
+      "timestamp": 1768272440.7813911
+    },
+    {
+      "question": "Can you explain how you would approach optimizing the inheritance-based validation framework to handle different types of credit card validation rules?",
+      "answer": "This design allows the validation module to scale safely as new card types or rules are introduced, which is critical in real-world payment systems.I don't want to give interview any more",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": true,
+        "intent_fulfillment": "complete",
+        "example_provided": false,
+        "analysis": "The candidate provided a clear explanation of how they would approach optimizing the inheritance-based validation framework, specifically highlighting its scalability and relevance to real-world payment systems. However, the answer is cut off abruptly, which prevents further analysis of potential supporting examples or real-world justifications."
+      },
+      "score": {
+        "intent_score": 0.8,
+        "content_score": 0.65,
+        "feedforward": "Consider including a real-world example or a specific scenario to demonstrate the scalability of the design and make the explanation more concrete."
+      },
+      "timestamp": 1768272487.599634
+    },
+    {
+      "question": "Can you describe a scenario where you had to optimize the performance of a Java application, and what steps you took to achieve it?",
+      "answer": "no",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not align with the expected intent of the question, which is to describe a scenario and the steps taken to optimize a Java application. The answer is a simple 'no', which does not provide any information or explanation."
+      },
+      "score": {
+        "intent_score": 0.2,
+        "content_score": 0.0,
+        "feedforward": "Provide a concrete example of a Java application optimization scenario, including the steps you took to improve its performance."
+      },
+      "timestamp": 1768272513.237768
+    },
+    {
+      "question": "Can you elaborate on what you mean by 'no'? Are you saying you've never had to optimize a Java application, or is there something specific you're referring to?",
+      "answer": "I'm saying I don't want to continue for the interview",
+      "intent_analysis": {
+        "intent_type": "what",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not align with the expected intent of the question. The question is asking for clarification on the candidate's previous statement, but the answer does not provide any explanation or context. It appears to be a statement unrelated to the question."
+      },
+      "score": {
+        "intent_score": 0.2,
+        "content_score": 0.2,
+        "feedforward": "Provide a clear explanation or context related to the question, and ensure the answer aligns with the expected intent."
+      },
+      "timestamp": 1768272556.133491
+    },
+    {
+      "question": "Can you clarify what you mean by 'I don't want to continue for the interview'? Is there something specific that's causing you to feel this way?",
+      "answer": "No I just don't want to",
+      "intent_analysis": {
+        "intent_type": "what",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not provide a clear definition or explanation of the candidate's feelings or concerns. It lacks the clarity of understanding expected for a 'what' intent type."
+      },
+      "score": {
+        "intent_score": 0.2,
+        "content_score": 0.3,
+        "feedforward": "Provide a clear explanation of your feelings or concerns, and include specific reasons for not wanting to continue the interview."
+      },
+      "timestamp": 1768272590.868756
+    },
+    {
+      "question": "Can you help me understand what specifically is causing you to feel this way about continuing the interview?",
+      "answer": "I don't want to explain any thing I need to go somewhere urgently so can I leave.",
+      "intent_analysis": {
+        "intent_type": "why",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not align with the expected intent of the question, which is to provide a reason or explanation for feeling a certain way. Instead, the candidate provides a reason for wanting to leave the interview, which is unrelated to the question."
+      },
+      "score": {
+        "intent_score": 0.0,
+        "content_score": 0.2,
+        "feedforward": "Provide a clear and concise explanation for why you're feeling a certain way about continuing the interview. Try to relate your feelings to the question asked and avoid giving unrelated reasons for wanting to leave."
+      },
+      "timestamp": 1768272636.177585
+    }
+  ],
+  "status": "running",
+  "version": 1
+}
