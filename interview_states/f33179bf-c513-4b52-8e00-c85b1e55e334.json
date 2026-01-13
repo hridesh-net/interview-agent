@@ -1,0 +1,129 @@
+{
+  "interview_id": "f33179bf-c513-4b52-8e00-c85b1e55e334",
+  "jd": "A Python Developer writes, tests, and maintains efficient, reusable Python code for server-side logic, web applications, data pipelines, or ML models, focusing on backend components, API integration, debugging, performance, and collaboration with frontend teams to build scalable, secure software solutions. Key responsibilities include designing APIs (Django/Flask), integrating services, improving existing systems, and implementing security, often requiring knowledge of databases, ORMs, and front-end basics.  \nCore Responsibilities\nCode Development: Write clean, scalable, and testable Python code for various applications and services. \nBackend Logic: Develop server-side logic, build RESTful APIs, and integrate with external web services and databases (SQL/NoSQL). \nIntegration: Connect front-end elements with server-side logic and integrate third-party applications. \nDebugging & Optimization: Test, debug, and optimize code for performance, security, and scalability. \nCollaboration: Work with product managers, designers, and frontend developers to understand requirements and deliver features. \nData & Automation: Create data processing pipelines, automation scripts, and support data analysis/ML tasks. \nKey Skills & Requirements\nProgramming: Strong expertise in Python, including its core libraries. \nFrameworks: Experience with frameworks like Django, Flask, or Pyramid. \nDatabases: Familiarity with relational (e.g., PostgreSQL, MySQL) and NoSQL (e.g., MongoDB) databases. \nTools: Knowledge of ORMs (Object-Relational Mappers) and potentially front-end tech (HTML, JavaScript). \nMethodologies: Understanding of software development methodologies, security best practices, and Agile environments. \nCommon Job Titles\nPython Developer/Programmer/Engineer, Backend Developer, Software Engineer (Python), and Data Engineer (often overlaps). ",
+  "questions": [
+    {
+      "question": "Can you describe a situation where you had to refactor a complex piece of code to improve performance? What changes did you make?",
+      "intent_type": "what",
+      "candidate_state": "engaged",
+      "skill_focus": "code development"
+    },
+    {
+      "question": "Can you walk me through your thought process when deciding how to break down a complex piece of code, and what specific steps you took to simplify it?",
+      "intent_type": "how",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you provide a concrete example of a complex code you broke down into smaller functions, and walk me through the specific steps you took to simplify it?",
+      "intent_type": "how",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you elaborate on the specific function you created to check the file extension, and how you ensured it was valid for reading?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "How do you approach debugging a difficult issue in your code, and what tools or techniques do you use?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "debugging & optimization"
+    },
+    {
+      "question": "Can you walk me through the process of designing a RESTful API using Django or Flask? What considerations do you take into account?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "backend logic"
+    },
+    {
+      "question": "How do you ensure the security of your code, particularly when integrating with external services or databases? Can you give an example?",
+      "intent_type": "why",
+      "candidate_state": "engaged",
+      "skill_focus": "security"
+    },
+    {
+      "question": "Can you describe a time when you had to collaborate with a frontend developer to resolve an issue or implement a feature? What was the outcome?",
+      "intent_type": "what",
+      "candidate_state": "engaged",
+      "skill_focus": "collaboration"
+    },
+    {
+      "question": "How do you approach data analysis or machine learning tasks in your code? What tools or libraries do you use?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "data & automation"
+    },
+    {
+      "question": "Can you explain the differences between using a relational database (e.g., PostgreSQL) versus a NoSQL database (e.g., MongoDB) in a project? When would you choose one over the other?",
+      "intent_type": "what",
+      "candidate_state": "engaged",
+      "skill_focus": "databases"
+    },
+    {
+      "question": "Can you describe a situation where you had to balance competing priorities or trade-offs in a project? How did you approach it?",
+      "intent_type": "why",
+      "candidate_state": "engaged",
+      "skill_focus": "methodologies"
+    }
+  ],
+  "current_index": 3,
+  "history": [
+    {
+      "question": "Can you describe a situation where you had to refactor a complex piece of code to improve performance? What changes did you make?",
+      "answer": "will break the peice of a complex code in multiple parts to make the code simple .",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not match the expected intent of the question, which is to describe a real-world situation and the changes made to improve performance. The answer only mentions breaking down the complex code, but does not provide any details on how this was done or what improvements were made."
+      },
+      "score": {
+        "intent_score": 0.2,
+        "content_score": 0.35,
+        "feedforward": "Provide a specific example of a complex code refactoring project, including the changes made and the improvements achieved. Explain the thought process behind the refactoring and how it was approached."
+      },
+      "timestamp": 1768310980.4537768
+    },
+    {
+      "question": "Can you walk me through your thought process when deciding how to break down a complex piece of code, and what specific steps you took to simplify it?",
+      "answer": "first try to understand what the output we need and what we have to provide as a input after that instead of write a complete code in one function will break into multiple smaller fucntion that have its own working funcitonality and use those function as per requirement",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": true,
+        "intent_fulfillment": "partial",
+        "example_provided": false,
+        "analysis": "The answer partially matches the expected intent of explaining the 'how' of breaking down complex code. It mentions breaking down the code into multiple smaller functions, but lacks a clear step-by-step explanation of the thought process and the specific steps taken to simplify the code."
+      },
+      "score": {
+        "intent_score": 0.5,
+        "content_score": 0.45,
+        "feedforward": "Provide a clear, step-by-step explanation of your thought process when breaking down complex code. Consider including a specific example of how you applied this approach in a previous project."
+      },
+      "timestamp": 1768311156.06881
+    },
+    {
+      "question": "Can you provide a concrete example of a complex code you broke down into smaller functions, and walk me through the specific steps you took to simplify it?",
+      "answer": "lets take an expample i have to build a code to read a file . so for that will create a multiple function to work on that intially have to crate a function to check the extenstion or is that file is valid to read or not if it is valid then call a diferent fucntion to read that file. by using these will resolve the complex problem by writeing a complete code in one fucntion to differetn function that have its own task . and similalry if we have to write code in it to then we will create another function for that.",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": true,
+        "intent_fulfillment": "partial",
+        "example_provided": true,
+        "analysis": "The answer partially aligns with the expected intent of explaining the steps taken to simplify a complex code. Although the candidate mentions breaking down the code into smaller functions and creating separate functions for different tasks, the explanation is unclear and lacks specific details. The example provided is also vague and doesn't demonstrate a concrete instance of code simplification. The candidate's response seems to be a general description of the approach rather than a step-by-step explanation of how they would simplify a complex code."
+      },
+      "score": {
+        "intent_score": 0.7,
+        "content_score": 0.175,
+        "feedforward": "Provide a clear and concise explanation of the steps taken to simplify a complex code, including a concrete example of code simplification. Avoid grammatical errors and unclear explanations."
+      },
+      "timestamp": 1768311357.4695811
+    }
+  ],
+  "status": "running",
+  "version": 1,
+  "consecutive_failures": 0,
+  "total_failures": 0,
+  "terminated_reason": null,
+  "disengagement_count": 0
+}

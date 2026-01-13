@@ -1,0 +1,217 @@
+{
+  "interview_id": "06885b32-4205-4db7-95ab-f62188f83077",
+  "jd": "A Python Developer writes, tests, and maintains efficient, reusable Python code for server-side logic, web applications, data pipelines, or ML models, focusing on backend components, API integration, debugging, performance, and collaboration with frontend teams to build scalable, secure software solutions. Key responsibilities include designing APIs (Django/Flask), integrating services, improving existing systems, and implementing security, often requiring knowledge of databases, ORMs, and front-end basics.  \nCore Responsibilities\nCode Development: Write clean, scalable, and testable Python code for various applications and services. \nBackend Logic: Develop server-side logic, build RESTful APIs, and integrate with external web services and databases (SQL/NoSQL). \nIntegration: Connect front-end elements with server-side logic and integrate third-party applications. \nDebugging & Optimization: Test, debug, and optimize code for performance, security, and scalability. \nCollaboration: Work with product managers, designers, and frontend developers to understand requirements and deliver features. \nData & Automation: Create data processing pipelines, automation scripts, and support data analysis/ML tasks. \nKey Skills & Requirements\nProgramming: Strong expertise in Python, including its core libraries. \nFrameworks: Experience with frameworks like Django, Flask, or Pyramid. \nDatabases: Familiarity with relational (e.g., PostgreSQL, MySQL) and NoSQL (e.g., MongoDB) databases. \nTools: Knowledge of ORMs (Object-Relational Mappers) and potentially front-end tech (HTML, JavaScript). \nMethodologies: Understanding of software development methodologies, security best practices, and Agile environments. \nCommon Job Titles\nPython Developer/Programmer/Engineer, Backend Developer, Software Engineer (Python), and Data Engineer (often overlaps). ",
+  "questions": [
+    {
+      "question": "What is the primary difference between using Django and Flask for building a RESTful API?",
+      "intent_type": "what",
+      "candidate_state": "engaged",
+      "skill_focus": "frameworks"
+    },
+    {
+      "question": "Can you provide a brief explanation of the primary differences between Django and Flask, focusing on their respective strengths and weaknesses?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you provide a specific example of a project where you had to choose between Django and Flask, and how you decided which one to use?",
+      "intent_type": "when",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you walk me through the technology stack you chose for the student management server and why you selected it over the other?",
+      "intent_type": "why",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you elaborate on why you chose Django over other Python frameworks for the backend, and what specific features or benefits made it a better fit for this project?",
+      "intent_type": "why",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you give an example of a Django feature or benefit that you mentioned earlier, and explain how it specifically contributed to the project's success?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you quantify the impact of using Django's multiple applications feature on the project's success, such as improved performance or reduced maintenance time?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you elaborate on how Django's multiple applications feature specifically contributed to the 50-60% improvement in performance, and how it also helped reduce maintenance time?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you describe a situation where you had to optimize database queries for improved performance? How did you approach it?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "debugging & optimization"
+    },
+    {
+      "question": "Why do you think it's essential to follow security best practices when building server-side logic?",
+      "intent_type": "why",
+      "candidate_state": "engaged",
+      "skill_focus": "security"
+    },
+    {
+      "question": "How would you design a data processing pipeline using Python and a database like PostgreSQL?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "data & automation"
+    },
+    {
+      "question": "Can you walk me through your process for debugging and troubleshooting a complex issue in a large-scale Python application?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "debugging & optimization"
+    },
+    {
+      "question": "Why do you think collaboration with frontend teams is crucial when building scalable software solutions?",
+      "intent_type": "why",
+      "candidate_state": "engaged",
+      "skill_focus": "collaboration"
+    },
+    {
+      "question": "How do you stay up-to-date with the latest developments and advancements in the Python ecosystem?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "programming"
+    },
+    {
+      "question": "Can you describe a situation where you had to implement a new feature or requirement in an existing system? How did you approach it?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "integration"
+    }
+  ],
+  "current_index": 7,
+  "history": [
+    {
+      "question": "What is the primary difference between using Django and Flask for building a RESTful API?",
+      "answer": "",
+      "intent_analysis": {
+        "intent_type": "what",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "No answer provided, unable to classify intent or evaluate fulfillment."
+      },
+      "score": {
+        "intent_score": 0.0,
+        "content_score": 0.0,
+        "feedforward": "Please provide a clear and concise answer explaining the primary difference between using Django and Flask for building a RESTful API. Consider including specific examples or key features that distinguish one framework from the other."
+      },
+      "timestamp": 1768313392.22034
+    },
+    {
+      "question": "Can you provide a brief explanation of the primary differences between Django and Flask, focusing on their respective strengths and weaknesses?",
+      "answer": "",
+      "intent_analysis": {
+        "intent_type": "what",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer is empty, failing to provide any explanation or comparison between Django and Flask. A complete answer would have included a clear definition of the primary differences, strengths, and weaknesses of each framework."
+      },
+      "score": {
+        "intent_score": 0.0,
+        "content_score": 0.0,
+        "feedforward": "Provide a clear explanation of the primary differences between Django and Flask, including their respective strengths and weaknesses. Consider including a brief comparison of their architectures, development processes, and any notable features."
+      },
+      "timestamp": 1768313397.683221
+    },
+    {
+      "question": "Can you provide a specific example of a project where you had to choose between Django and Flask, and how you decided which one to use?",
+      "answer": "created an student management server",
+      "intent_analysis": {
+        "intent_type": "what",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": true,
+        "analysis": "The answer provides an example of a project, but it does not address the specific question of choosing between Django and Flask. The candidate only mentions creating a student management server without explaining the decision-making process or the technology stack used."
+      },
+      "score": {
+        "intent_score": 0.2,
+        "content_score": 0.2,
+        "feedforward": "Include a detailed explanation of the decision-making process and the technology stack used in your example. Make sure to address the specific question of choosing between Django and Flask."
+      },
+      "timestamp": 1768313442.260127
+    },
+    {
+      "question": "Can you walk me through the technology stack you chose for the student management server and why you selected it over the other?",
+      "answer": "used django for backend because i needed multiple applications with separate schema models routes and all, streamlit for frontend for easy and faster use",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": true,
+        "intent_fulfillment": "partial",
+        "example_provided": false,
+        "analysis": "The answer partially fulfills the intent by explaining the technology stack used (Django for backend and Streamlit for frontend), but it lacks a clear explanation of why these technologies were chosen over others. It also does not provide any specific examples or real-world justifications to support the selection of these technologies."
+      },
+      "score": {
+        "intent_score": 0.6,
+        "content_score": 0.5,
+        "feedforward": "Include a clear explanation of why you chose Django and Streamlit over other technologies, and provide specific examples or real-world justifications to support your selection."
+      },
+      "timestamp": 1768313516.0197551
+    },
+    {
+      "question": "Can you elaborate on why you chose Django over other Python frameworks for the backend, and what specific features or benefits made it a better fit for this project?",
+      "answer": "i was able to use it for multiple applications, each with their own models, routes, serializer, schema and other things, to ensure that each functionality has it own applications and debugging would be easier with more structured data",
+      "intent_analysis": {
+        "intent_type": "why",
+        "intent_matched": true,
+        "intent_fulfillment": "partial",
+        "example_provided": false,
+        "analysis": "The answer partially addresses the 'why' aspect by mentioning the ability to use Django for multiple applications, but it fails to explicitly state the specific features or benefits of Django that made it a better fit for the project. It also doesn't provide a clear reason or justification for choosing Django over other frameworks."
+      },
+      "score": {
+        "intent_score": 0.7,
+        "content_score": 0.45,
+        "feedforward": "Provide specific examples of Django features or benefits that made it a better fit for the project, such as its batteries-included approach, ORM, or built-in support for asynchronous programming."
+      },
+      "timestamp": 1768313604.864276
+    },
+    {
+      "question": "Can you give an example of a Django feature or benefit that you mentioned earlier, and explain how it specifically contributed to the project's success?",
+      "answer": "i had multiple applications for each functionality so django helped me there to keep things separated",
+      "intent_analysis": {
+        "intent_type": "what",
+        "intent_matched": true,
+        "intent_fulfillment": "partial",
+        "example_provided": true,
+        "analysis": "The answer provides an example of a Django feature (multiple applications for each functionality), but it lacks a clear explanation of how this feature specifically contributed to the project's success. The mention of 'keeping things separated' is a vague benefit and does not provide a clear understanding of the impact of Django on the project."
+      },
+      "score": {
+        "intent_score": 0.6,
+        "content_score": 0.55,
+        "feedforward": "Provide a clear explanation of how the Django feature (multiple applications for each functionality) specifically contributed to the project's success. Consider including specific metrics or outcomes that demonstrate the impact of this feature."
+      },
+      "timestamp": 1768313649.372179
+    },
+    {
+      "question": "Can you quantify the impact of using Django's multiple applications feature on the project's success, such as improved performance or reduced maintenance time?",
+      "answer": "i can see the performance improved by around 50-60% and debugging made 100% easier",
+      "intent_analysis": {
+        "intent_type": "what",
+        "intent_matched": true,
+        "intent_fulfillment": "partial",
+        "example_provided": true,
+        "analysis": "The answer provides a specific example of improved performance, but lacks a clear explanation of how Django's multiple applications feature contributed to this outcome. Additionally, the answer does not address the aspect of reduced maintenance time, which is also part of the question."
+      },
+      "score": {
+        "intent_score": 0.6,
+        "content_score": 0.55,
+        "feedforward": "Provide a clear explanation of how Django's multiple applications feature contributed to the improved performance, and also address the aspect of reduced maintenance time to make the answer more comprehensive."
+      },
+      "timestamp": 1768313700.856055
+    }
+  ],
+  "status": "running",
+  "version": 1,
+  "consecutive_failures": 0,
+  "total_failures": 0,
+  "terminated_reason": null,
+  "disengagement_count": 0
+}

@@ -1,0 +1,80 @@
+{
+  "interview_id": "c364e386-0679-415c-8564-d22851e6d5d6",
+  "jd": "A Python Developer writes, tests, and maintains efficient, reusable Python code for server-side logic, web applications, data pipelines, or ML models, focusing on backend components, API integration, debugging, performance, and collaboration with frontend teams to build scalable, secure software solutions. Key responsibilities include designing APIs (Django/Flask), integrating services, improving existing systems, and implementing security, often requiring knowledge of databases, ORMs, and front-end basics.  \nCore Responsibilities\nCode Development: Write clean, scalable, and testable Python code for various applications and services. \nBackend Logic: Develop server-side logic, build RESTful APIs, and integrate with external web services and databases (SQL/NoSQL). \nIntegration: Connect front-end elements with server-side logic and integrate third-party applications. \nDebugging & Optimization: Test, debug, and optimize code for performance, security, and scalability. \nCollaboration: Work with product managers, designers, and frontend developers to understand requirements and deliver features. \nData & Automation: Create data processing pipelines, automation scripts, and support data analysis/ML tasks. \nKey Skills & Requirements\nProgramming: Strong expertise in Python, including its core libraries. \nFrameworks: Experience with frameworks like Django, Flask, or Pyramid. \nDatabases: Familiarity with relational (e.g., PostgreSQL, MySQL) and NoSQL (e.g., MongoDB) databases. \nTools: Knowledge of ORMs (Object-Relational Mappers) and potentially front-end tech (HTML, JavaScript). \nMethodologies: Understanding of software development methodologies, security best practices, and Agile environments. \nCommon Job Titles\nPython Developer/Programmer/Engineer, Backend Developer, Software Engineer (Python), and Data Engineer (often overlaps). ",
+  "questions": [
+    {
+      "question": "Can you explain the key differences between using Django and Flask for building a RESTful API?",
+      "intent_type": "what",
+      "candidate_state": "engaged",
+      "skill_focus": "frameworks"
+    },
+    {
+      "question": "How do you approach debugging a performance issue in a large-scale Python application?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "debugging & optimization"
+    },
+    {
+      "question": "Describe a scenario where you had to integrate a third-party API with a Python application. What challenges did you face, and how did you overcome them?",
+      "intent_type": "why",
+      "candidate_state": "engaged",
+      "skill_focus": "integration"
+    },
+    {
+      "question": "What security best practices do you follow when building a Python application, and can you give an example of a security vulnerability you've encountered in the past?",
+      "intent_type": "what",
+      "candidate_state": "engaged",
+      "skill_focus": "security"
+    },
+    {
+      "question": "Can you walk me through your process for optimizing the performance of a Python application, including any tools or techniques you might use?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "debugging & optimization"
+    },
+    {
+      "question": "How do you ensure that your Python code is scalable and maintainable, and can you give an example of a project where you had to refactor code to improve scalability?",
+      "intent_type": "why",
+      "candidate_state": "engaged",
+      "skill_focus": "code development"
+    },
+    {
+      "question": "Describe your experience with ORMs like SQLAlchemy or Django ORM. Can you give an example of a use case where an ORM was particularly useful?",
+      "intent_type": "what",
+      "candidate_state": "engaged",
+      "skill_focus": "databases"
+    },
+    {
+      "question": "Can you explain the concept of a data pipeline, and how you would design a pipeline to process and analyze data in a Python application?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "data & automation"
+    }
+  ],
+  "current_index": 1,
+  "history": [
+    {
+      "question": "Can you explain the key differences between using Django and Flask for building a RESTful API?",
+      "answer": "Django is a full-featured framework that provides many built-in components like an ORM, authentication, and an admin panel, making it well-suited for large and structured RESTful APIs, often built using Django REST Framework. Flask, on the other hand, is a lightweight and minimal framework that gives developers more flexibility and control, allowing them to add only the extensions they need, which makes it ideal for small APIs and microservices where simplicity and quick development are priorities.",
+      "intent_analysis": {
+        "intent_type": "what",
+        "intent_matched": true,
+        "intent_fulfillment": "complete",
+        "example_provided": false,
+        "analysis": "The answer provides a clear definition and explanation of the key differences between using Django and Flask for building a RESTful API, including their respective strengths and weaknesses, making it a complete fulfillment of the expected intent."
+      },
+      "score": {
+        "intent_score": 0.9,
+        "content_score": 0.7,
+        "feedforward": "Include a real-world example and provide more specific details about the use cases for each framework to strengthen the explanation."
+      },
+      "timestamp": 1768312468.852233
+    }
+  ],
+  "status": "running",
+  "version": 1,
+  "consecutive_failures": 0,
+  "total_failures": 0,
+  "terminated_reason": null,
+  "disengagement_count": 0
+}
