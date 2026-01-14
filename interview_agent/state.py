@@ -1,15 +1,16 @@
 from dataclasses import dataclass, field, asdict
-from typing import List, Dict
+from typing import List, Dict, Optional
 import uuid
 import time
+from datetime import datetime
 
 
 @dataclass
 class QARecord:
     question: str
     answer: str
-    intent_analysis: Dict
-    score: Dict
+    intent_analysis: Optional[Dict] = None
+    score: Optional[Dict] = None
     timestamp: float = field(default_factory=time.time)
 
 
@@ -26,6 +27,15 @@ class InterviewState:
     total_failures: int = 0
     terminated_reason: str | None = None
     disengagement_count: int = 0
+    started_at: datetime = datetime.utcnow()
+
+    topic_question_count: int = 0
+    max_questions_per_topic: int = 4
+
+    disengagement_count: int = 0
+    max_disengagements: int = 2
+
+    max_duration_minutes: int = 15
 
     def to_dict(self):
         return asdict(self)

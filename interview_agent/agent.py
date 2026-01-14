@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 from .executor import SkillExecutor
 from .state import InterviewState, QARecord
 
@@ -7,6 +9,8 @@ from interview_agent.schemas import (
     ScoreOutput,
     FollowupQuestionOutput,
 )
+
+from interview_agent.dapr_publisher import publish_answer_event
 
 from interview_agent.trace import TraceContext
 from interview_agent.logger import JsonLogger
@@ -84,15 +88,30 @@ class InterviewAgent:
         return state.questions[state.current_index]["question"]
 
     def submit_answer(self, interview_id: str, answer: str):
+        # -----------------------------
+        # Load state FIRST
+        # -----------------------------
         state = self.store.load(interview_id)
 
         if state.status != "running":
             raise RuntimeError("Interview is not active")
 
-        trace = TraceContext.create(state.interview_id)
+        # -----------------------------
+        # Time guard (15 min)
+        # -----------------------------
+        elapsed = datetime.utcnow() - state.started_at
+        if elapsed > timedelta(minutes=state.max_duration_minutes):
+            state.status = "terminated"
+            state.terminated_reason = "time_limit_reached"
+            self.store.save(state)
+            return state
 
+        trace = TraceContext.create(state.interview_id)
         q = state.questions[state.current_index]["question"]
 
+        # -----------------------------
+        # Intent evaluation
+        # -----------------------------
         intent = self.skills.run(
             skill="answer_intent_evaluator",
             input={"question": q, "answer": answer},
@@ -100,68 +119,85 @@ class InterviewAgent:
             trace=trace
         )
 
-        score = self.skills.run(
-            skill="score_calculator",
+        # -----------------------------
+        # Persist answer immediately
+        # -----------------------------
+        state.history.append(QARecord(q, answer, intent.model_dump()))
+
+        publish_answer_event({
+            "event": "answer_submitted",
+            "interview_id": state.interview_id,
+            "turn_id": state.current_index,
+            "question": q,
+            "answer": answer,
+            "timestamp": datetime.utcnow().isoformat(),
+        })
+
+        # -----------------------------
+        # Follow-up decision (LLM-guided)
+        # -----------------------------
+        followup = self.skills.run(
+            skill="followup_question_generator",
             input={
-                "question": q,
+                "previous_question": q,
                 "answer": answer,
-                "intent_analysis": intent.model_dump()
+                "intent_analysis": intent.model_dump(),
             },
-            schema=ScoreOutput,
+            schema=FollowupQuestionOutput,
             trace=trace
         )
 
-        state.history.append(
-            QARecord(q, answer, intent.model_dump(), score.model_dump())
-        )
+        state_signal = followup.candidate_state or "engaged"
+        action = followup.next_action
 
-        if intent.intent_fulfillment != "complete":
-            followup = self.skills.run(
-                skill="followup_question_generator",
-                input={
-                    "previous_question": q,
-                    "answer": answer,
-                    "intent_analysis": intent.model_dump(),
-                    "score": score.model_dump()
-                },
-                schema=FollowupQuestionOutput,
-                trace=trace
-            )
+        # -----------------------------
+        # Exit paths
+        # -----------------------------
+        if action == "end_interview" or state_signal == "exit_intent":
+            state.status = "terminated"
+            state.terminated_reason = "llm_recommended"
+            self.store.save(state)
+            return state
 
-            state_signal = followup.candidate_state
+        if state_signal == "disengaged":
+            state.disengagement_count += 1
+        else:
+            state.disengagement_count = 0
 
-            if state_signal == "exit_intent":
-                state.status = "terminated"
-                state.terminated_reason = "candidate_exit_intent"
-                self.store.save(state)
-                return state
-            
-            if state_signal == "disengaged":
-                state.disengagement_count += 1
-            else:
-                state.disengagement_count = 0
-            
-            if state.disengagement_count >= 3:
-                state.status = "terminated"
-                state.terminated_reason = "candidate_disengaged"
-                self.store.save(state)
-                return state
+        if state.disengagement_count >= state.max_disengagements:
+            state.status = "terminated"
+            state.terminated_reason = "candidate_disengaged"
+            self.store.save(state)
+            return state
 
+        # -----------------------------
+        # Topic & follow-up control
+        # -----------------------------
+        state.topic_question_count += 1
+
+        if (
+            action == "followup"
+            and state.topic_question_count < state.max_questions_per_topic
+            and followup.followup_question
+        ):
             state.questions.insert(
                 state.current_index + 1,
                 {
                     "question": followup.followup_question,
                     "intent_type": followup.intent_type,
-                    "skill_focus": "follow-up"
+                    "skill_focus": "follow-up",
                 }
             )
+        else:
+            # Move to next topic
+            state.current_index += 1
+            state.topic_question_count = 0
 
-        state.current_index += 1
-
+        # -----------------------------
+        # End interview if no questions left
+        # -----------------------------
         if state.current_index >= len(state.questions):
             state.status = "completed"
 
-        # 🔒 ALWAYS persist
         self.store.save(state)
-
         return state

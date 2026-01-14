@@ -11,4 +11,6 @@ dependencies = [
     "rich",
     "openai",
     "boto3",
+    "dapr",
+    "fastapi"
 ]
