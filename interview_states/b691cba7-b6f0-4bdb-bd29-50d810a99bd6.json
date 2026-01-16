@@ -1,0 +1,92 @@
+{
+  "interview_id": "b691cba7-b6f0-4bdb-bd29-50d810a99bd6",
+  "jd": "We are hiring a Backend Python Engineer with FastAPI, AWS, and microservices experience.",
+  "questions": [
+    {
+      "question": "What are the key benefits of using FastAPI for building a high-performance backend service?",
+      "intent_type": "what",
+      "candidate_state": "engaged",
+      "skill_focus": "backend framework"
+    },
+    {
+      "question": "Can you explain how FastAPI's architecture enables it to handle concurrent requests?",
+      "intent_type": "how",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you walk me through the specific steps of how asyncio enables FastAPI to handle concurrent requests?",
+      "intent_type": "how",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you describe a scenario where you had to troubleshoot a complex issue in a microservices architecture? How did you approach it?",
+      "intent_type": "when",
+      "candidate_state": "engaged",
+      "skill_focus": "troubleshooting"
+    },
+    {
+      "question": "Explain how you would design a scalable and secure API gateway using AWS services.",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "system design"
+    },
+    {
+      "question": "Why do you think microservices architecture is more suitable for a large-scale application compared to a monolithic architecture?",
+      "intent_type": "why",
+      "candidate_state": "engaged",
+      "skill_focus": "system design"
+    },
+    {
+      "question": "Have you worked with AWS services such as API Gateway, Lambda, and DynamoDB? Can you give an example of how you used these services in a project?",
+      "intent_type": "when",
+      "candidate_state": "engaged",
+      "skill_focus": "cloud services"
+    },
+    {
+      "question": "How do you ensure that your code is properly tested and validated in a microservices environment with multiple dependencies?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "testing"
+    }
+  ],
+  "current_index": 2,
+  "history": [
+    {
+      "question": "What are the key benefits of using FastAPI for building a high-performance backend service?",
+      "answer": "FastAPI can handle consurretn requst as it is built over Asynchio",
+      "intent_analysis": {
+        "intent_type": "what",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not match the expected intent of 'what' as it does not provide a clear definition or explanation of the key benefits of using FastAPI. The mention of concurrent requests is a feature, but it does not address the question's focus on benefits."
+      },
+      "score": null,
+      "timestamp": 1768604113.607977
+    },
+    {
+      "question": "Can you explain how FastAPI's architecture enables it to handle concurrent requests?",
+      "answer": "Because it's over asyncio so it handles requests in asynchronus manner",
+      "intent_analysis": {
+        "intent_type": "how",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not provide a step-by-step explanation or clear procedural strategy of how FastAPI's architecture enables it to handle concurrent requests. It only mentions asyncio without explaining its role in handling concurrent requests."
+      },
+      "score": null,
+      "timestamp": 1768604158.0830379
+    }
+  ],
+  "status": "running",
+  "version": 1,
+  "consecutive_failures": 0,
+  "total_failures": 0,
+  "terminated_reason": null,
+  "disengagement_count": 0,
+  "started_at": "2026-01-16T22:54:02.687779",
+  "topic_question_count": 1,
+  "max_questions_per_topic": 4,
+  "max_disengagements": 2,
+  "max_duration_minutes": 30
+}

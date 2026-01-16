@@ -1,0 +1,80 @@
+{
+  "interview_id": "8bc2123f-6095-4621-91e6-c6c066c8b8f4",
+  "jd": "We are hiring a Backend Python Engineer with FastAPI, AWS, and microservices experience.",
+  "questions": [
+    {
+      "question": "What is your understanding of the microservices architecture pattern, and how do you apply it in a FastAPI-based system?",
+      "intent_type": "what",
+      "candidate_state": "engaged",
+      "skill_focus": "system design"
+    },
+    {
+      "question": "Can you define what you mean by microservices architecture pattern and how it differs from a monolithic architecture?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you describe a situation where you had to troubleshoot a performance issue in a microservices-based system, and how you resolved it?",
+      "intent_type": "why",
+      "candidate_state": "engaged",
+      "skill_focus": "troubleshooting"
+    },
+    {
+      "question": "How do you ensure data consistency across multiple microservices in a FastAPI-based system, and what strategies do you use to handle conflicts?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "data consistency"
+    },
+    {
+      "question": "What experience do you have with AWS services, and how have you used them in a FastAPI-based project to improve scalability and reliability?",
+      "intent_type": "when",
+      "candidate_state": "engaged",
+      "skill_focus": "cloud computing"
+    },
+    {
+      "question": "How do you approach API security in a FastAPI-based system, and what measures do you take to protect against common web attacks?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "security"
+    },
+    {
+      "question": "Can you walk me through your process for implementing caching in a FastAPI-based system, and how you determine the optimal cache size and expiration time?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "performance optimization"
+    },
+    {
+      "question": "How do you handle errors and exceptions in a FastAPI-based system, and what strategies do you use to provide meaningful error messages to users?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "error handling"
+    }
+  ],
+  "current_index": 1,
+  "history": [
+    {
+      "question": "What is your understanding of the microservices architecture pattern, and how do you apply it in a FastAPI-based system?",
+      "answer": "FastAPI can handle consurretn requst as it is built over Asynchio",
+      "intent_analysis": {
+        "intent_type": "what",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not provide a clear definition or explanation of the microservices architecture pattern. It seems to be a misunderstanding of the question, as it mentions FastAPI handling concurrent requests, which is a feature but not related to the microservices architecture pattern."
+      },
+      "score": null,
+      "timestamp": 1768604842.545898
+    }
+  ],
+  "status": "running",
+  "version": 1,
+  "consecutive_failures": 0,
+  "total_failures": 0,
+  "terminated_reason": null,
+  "disengagement_count": 0,
+  "started_at": "2026-01-16T23:06:14.575599",
+  "topic_question_count": 1,
+  "max_questions_per_topic": 4,
+  "max_disengagements": 2,
+  "max_duration_minutes": 30
+}

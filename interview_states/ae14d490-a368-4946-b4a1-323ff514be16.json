@@ -1,0 +1,61 @@
+{
+  "interview_id": "ae14d490-a368-4946-b4a1-323ff514be16",
+  "jd": "We are hiring a Backend Python Engineer with FastAPI, AWS, and microservices experience.",
+  "questions": [
+    {
+      "question": "What are the key benefits of using FastAPI for building a high-performance backend service?",
+      "intent_type": "what",
+      "candidate_state": "engaged",
+      "skill_focus": "backend framework"
+    },
+    {
+      "question": "Can you describe a scenario where you had to optimize the performance of a microservice on AWS? What steps did you take?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "performance optimization"
+    },
+    {
+      "question": "Why do you think microservices architecture is more suitable for a large-scale application compared to a monolithic architecture?",
+      "intent_type": "why",
+      "candidate_state": "engaged",
+      "skill_focus": "system design"
+    },
+    {
+      "question": "How would you approach designing a scalable backend service using AWS services such as Lambda and S3?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "system design"
+    },
+    {
+      "question": "What are some common pitfalls to avoid when implementing a microservices architecture, and how would you address them?",
+      "intent_type": "what",
+      "candidate_state": "engaged",
+      "skill_focus": "system design"
+    },
+    {
+      "question": "Can you walk me through your experience with AWS services such as DynamoDB and API Gateway? How have you used them in a project?",
+      "intent_type": "when",
+      "candidate_state": "engaged",
+      "skill_focus": "aws services"
+    },
+    {
+      "question": "How do you handle errors and exceptions in a FastAPI application, and what strategies would you use to improve error handling?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "error handling"
+    }
+  ],
+  "current_index": 0,
+  "history": [],
+  "status": "running",
+  "version": 1,
+  "consecutive_failures": 0,
+  "total_failures": 0,
+  "terminated_reason": null,
+  "disengagement_count": 0,
+  "started_at": "2026-01-16T22:30:24.569494",
+  "topic_question_count": 0,
+  "max_questions_per_topic": 4,
+  "max_disengagements": 2,
+  "max_duration_minutes": 30
+}

@@ -48,6 +48,8 @@ class InterviewAgent:
     def start_or_resume(self, jd_text: str | None = None, interview_id: str | None = None):
         if interview_id and self.store.exists(interview_id):
             state = self.store.load(interview_id)
+            
+            print("Resuming interview:")
 
             self.logger.log(
                 event="interview_resumed",
@@ -75,11 +77,29 @@ class InterviewAgent:
             schema=QuestionGeneratorOutput,
             trace=trace
         )
+        
+        print("Generated Questions:")
+        print(questions)
+        print(type(questions))
+        
+        self.logger.log(
+            event="question_generated",
+            interview_id=state.interview_id,
+            trace_id=trace.trace_id,
+            questions=len(questions.questions),
+        )
 
         state.questions = [
             q.model_dump() for q in questions.questions
         ]
         state.status = "running"
+        
+        self.logger.log(
+            event="state_generated",
+            interview_id=state.interview_id,
+            trace_id=trace.trace_id,
+            state=state.to_dict(),
+        )
         self.store.save(state)
 
         return state
@@ -92,14 +112,20 @@ class InterviewAgent:
         # Load state FIRST
         # -----------------------------
         state = self.store.load(interview_id)
+        print(state.status)
+        print("----")
+        print(state.to_dict())
+        print(interview_id)
+        print("----")
+        
 
         if state.status != "running":
-            raise RuntimeError("Interview is not active")
+            raise RuntimeError(f"Interview is not active, current status: {state.status}")
 
         # -----------------------------
-        # Time guard (15 min)
+        # Time guard (30 min)
         # -----------------------------
-        elapsed = datetime.utcnow() - state.started_at
+        elapsed = datetime.utcnow() - datetime.fromisoformat(state.started_at)
         if elapsed > timedelta(minutes=state.max_duration_minutes):
             state.status = "terminated"
             state.terminated_reason = "time_limit_reached"
@@ -125,7 +151,6 @@ class InterviewAgent:
         state.history.append(QARecord(q, answer, intent.model_dump()))
 
         publish_answer_event({
-            "event": "answer_submitted",
             "interview_id": state.interview_id,
             "turn_id": state.current_index,
             "question": q,
@@ -188,6 +213,7 @@ class InterviewAgent:
                     "skill_focus": "follow-up",
                 }
             )
+            state.current_index += 1
         else:
             # Move to next topic
             state.current_index += 1

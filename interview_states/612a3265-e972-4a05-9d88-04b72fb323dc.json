@@ -1,0 +1,67 @@
+{
+  "interview_id": "612a3265-e972-4a05-9d88-04b72fb323dc",
+  "jd": "We are hiring a Backend Python Engineer with FastAPI, AWS, and microservices experience.",
+  "questions": [
+    {
+      "question": "What is the primary difference between a monolithic architecture and a microservices architecture?",
+      "intent_type": "what",
+      "candidate_state": "engaged",
+      "skill_focus": "system design"
+    },
+    {
+      "question": "Can you describe a situation where you had to handle a sudden increase in traffic on a FastAPI application? How did you optimize it?",
+      "intent_type": "when",
+      "candidate_state": "engaged",
+      "skill_focus": "performance optimization"
+    },
+    {
+      "question": "Explain how you would implement authentication and authorization using AWS Cognito and FastAPI.",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "security"
+    },
+    {
+      "question": "Why do you prefer using microservices over monolithic architecture in a cloud-based system like AWS?",
+      "intent_type": "why",
+      "candidate_state": "engaged",
+      "skill_focus": "system design"
+    },
+    {
+      "question": "How do you handle errors and exceptions in a FastAPI application, and what tools do you use for logging and monitoring?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "error handling"
+    },
+    {
+      "question": "Can you walk me through your process for debugging a slow-performing AWS Lambda function?",
+      "intent_type": "when",
+      "candidate_state": "engaged",
+      "skill_focus": "debugging"
+    },
+    {
+      "question": "Explain the concept of circuit breakers and how you would implement them using AWS SDK and FastAPI.",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "fault tolerance"
+    },
+    {
+      "question": "Why do you think it's essential to use a service discovery mechanism like AWS Service Registry in a microservices architecture?",
+      "intent_type": "why",
+      "candidate_state": "engaged",
+      "skill_focus": "system design"
+    }
+  ],
+  "current_index": 0,
+  "history": [],
+  "status": "running",
+  "version": 1,
+  "consecutive_failures": 0,
+  "total_failures": 0,
+  "terminated_reason": null,
+  "disengagement_count": 0,
+  "started_at": "2026-01-16T22:42:31.737218",
+  "topic_question_count": 0,
+  "max_questions_per_topic": 4,
+  "max_disengagements": 2,
+  "max_duration_minutes": 30
+}

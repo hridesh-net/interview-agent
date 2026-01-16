@@ -1,0 +1,98 @@
+{
+  "interview_id": "5e8f8ba5-4ce0-4d03-b887-f13705754bba",
+  "jd": "We are hiring a Backend Python Engineer with FastAPI, AWS, and microservices experience.",
+  "questions": [
+    {
+      "question": "What is the primary advantage of using FastAPI over other Python web frameworks?",
+      "intent_type": "what",
+      "candidate_state": "engaged",
+      "skill_focus": "Backend Frameworks"
+    },
+    {
+      "question": "Can you elaborate on how FastAPI's use of Asynchio and asgi requests enables concurrent requests?",
+      "intent_type": "how",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you clarify what you mean by the 'primary advantage' of FastAPI and provide a clear explanation?",
+      "intent_type": "what",
+      "skill_focus": "follow-up"
+    },
+    {
+      "question": "Can you describe a scenario where you would use AWS Lambda for a microservice, and how you would handle cold starts?",
+      "intent_type": "when",
+      "candidate_state": "engaged",
+      "skill_focus": "Cloud Computing"
+    },
+    {
+      "question": "Explain how you would implement service discovery and load balancing in a microservices architecture using AWS services.",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "System Design"
+    },
+    {
+      "question": "Why do you think using a service mesh like AWS App Mesh is beneficial for a microservices architecture, and can you give an example?",
+      "intent_type": "why",
+      "candidate_state": "engaged",
+      "skill_focus": "System Design"
+    },
+    {
+      "question": "Describe a situation where you would use a message broker like Amazon SQS for communication between microservices, and how you would handle message retries.",
+      "intent_type": "when",
+      "candidate_state": "engaged",
+      "skill_focus": "System Design"
+    },
+    {
+      "question": "How would you approach debugging a slow-performing microservice in a distributed system, and what tools would you use?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "Troubleshooting"
+    },
+    {
+      "question": "Can you explain the concept of circuit breakers in a microservices architecture, and how you would implement it using a library like Tenacity?",
+      "intent_type": "what",
+      "candidate_state": "engaged",
+      "skill_focus": "System Design"
+    }
+  ],
+  "current_index": 0,
+  "history": [
+    {
+      "question": "What is the primary advantage of using FastAPI over other Python web frameworks?",
+      "answer": "FastAPI can handle consurretn requst as it is built over Asynchio",
+      "intent_analysis": {
+        "intent_type": "what",
+        "intent_matched": false,
+        "intent_fulfillment": "not_fulfilled",
+        "example_provided": false,
+        "analysis": "The answer does not provide a clear definition or explanation of the primary advantage of using FastAPI. The mention of handling concurrent requests is a feature, but it does not directly answer the question about the primary advantage. Additionally, the spelling of 'conurretn' is incorrect, indicating a lack of attention to detail."
+      },
+      "score": null,
+      "timestamp": 1768603702.9979022
+    },
+    {
+      "question": "What is the primary advantage of using FastAPI over other Python web frameworks?",
+      "answer": "FastAPI can handle consurrent requst as it is built over Asynchio, asgi requsts.",
+      "intent_analysis": {
+        "intent_type": "what",
+        "intent_matched": true,
+        "intent_fulfillment": "partial",
+        "example_provided": false,
+        "analysis": "The answer partially matches the expected intent of 'what' as it provides a definition of FastAPI's advantage. However, it lacks clarity and does not fully explain the primary advantage. The mention of Asynchio and asgi requests is relevant but not clearly connected to the advantage."
+      },
+      "score": null,
+      "timestamp": 1768603759.220802
+    }
+  ],
+  "status": "running",
+  "version": 1,
+  "consecutive_failures": 0,
+  "total_failures": 0,
+  "terminated_reason": null,
+  "disengagement_count": 0,
+  "started_at": "2026-01-16T22:46:18.153755",
+  "topic_question_count": 1,
+  "max_questions_per_topic": 4,
+  "max_disengagements": 2,
+  "max_duration_minutes": 30
+}

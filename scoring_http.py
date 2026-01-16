@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi import Body
 from pydantic import BaseModel
 from scoring_agent.executor import ScoringExecutor
 from skill_engine import SkillEngine, SkillRegistry
@@ -28,7 +29,7 @@ scorer = ScoringExecutor(skill_engine)
 def subscribe():
     return [
         {
-            "pubsubname": "pubsub",
+            "pubsubname": "interview-pubsub",
             "topic": "answer_submitted",
             "route": "score-answer",
         }
@@ -47,11 +48,17 @@ class AnswerSubmittedEvent(BaseModel):
 
 
 @app.post("/score-answer")
-def handle_answer(event: AnswerSubmittedEvent):
-    result = scorer.evaluate(
-        question=event.question,
-        answer=event.answer,
-    )
+def handle_answer(payload: dict = Body(...)):
+    event = payload.get("data") or payload
+
+    # Now validate manually or trust it
+    interview_id = event.get("interview_id")
+    turn_id = event.get("turn_id")
+    question = event.get("question")
+    answer = event.get("answer")
+    timestamp = event.get("timestamp")
+
+    result = scorer.evaluate(question=question, answer=answer)
 
     # TODO: persist result (file/db/redis/state store)
     # TODO: optionally publish scoring_completed event

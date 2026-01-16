@@ -48,3 +48,4 @@ class FollowupQuestionOutput(BaseModel):
     intent_type: Literal["what", "why", "when", "how"]
     candidate_state: str
     reason: str
+    next_action: str

@@ -1,0 +1,61 @@
+{
+  "interview_id": "b466ccc3-2cff-4c15-8858-2e117b4f2aef",
+  "jd": "We are hiring a Backend Python Engineer with FastAPI, AWS, and microservices experience.",
+  "questions": [
+    {
+      "question": "What is the primary advantage of using FastAPI over other Python web frameworks?",
+      "intent_type": "what",
+      "candidate_state": "engaged",
+      "skill_focus": "web framework selection"
+    },
+    {
+      "question": "Can you describe a scenario where you had to implement load balancing in a microservices architecture? How did you approach it?",
+      "intent_type": "when",
+      "candidate_state": "engaged",
+      "skill_focus": "microservices architecture"
+    },
+    {
+      "question": "Explain how you would design a scalable backend service using AWS services. What trade-offs would you consider?",
+      "intent_type": "why",
+      "candidate_state": "engaged",
+      "skill_focus": "system design"
+    },
+    {
+      "question": "How do you handle service discovery in a distributed system with multiple microservices? Can you provide an example?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "service discovery"
+    },
+    {
+      "question": "What is your experience with AWS Lambda and API Gateway? Can you walk me through a recent project where you used these services?",
+      "intent_type": "when",
+      "candidate_state": "engaged",
+      "skill_focus": "AWS services"
+    },
+    {
+      "question": "Can you explain the concept of circuit breakers in a microservices architecture? How do you implement them in a FastAPI application?",
+      "intent_type": "what",
+      "candidate_state": "engaged",
+      "skill_focus": "fault tolerance"
+    },
+    {
+      "question": "How do you approach monitoring and logging in a distributed system with multiple microservices? Can you provide an example of a tool or framework you've used?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "monitoring and logging"
+    }
+  ],
+  "current_index": 0,
+  "history": [],
+  "status": "running",
+  "version": 1,
+  "consecutive_failures": 0,
+  "total_failures": 0,
+  "terminated_reason": null,
+  "disengagement_count": 0,
+  "started_at": "2026-01-16T22:30:24.569494",
+  "topic_question_count": 0,
+  "max_questions_per_topic": 4,
+  "max_disengagements": 2,
+  "max_duration_minutes": 30
+}

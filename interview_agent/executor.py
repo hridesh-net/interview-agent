@@ -29,10 +29,6 @@ class SkillExecutor:
                     user_input=input
                 )
                 
-                print("----- Raw Skill Output -----")
-                print(raw)
-                print(type(raw))
-                
                 parsed = extract_json(raw)
 
                 validated = schema.model_validate(parsed)

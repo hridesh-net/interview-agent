@@ -1,0 +1,55 @@
+{
+  "interview_id": "567bfc9c-f32c-4770-8847-38abd1783e93",
+  "jd": "We are hiring a Backend Python Engineer with FastAPI, AWS, and microservices experience.",
+  "questions": [
+    {
+      "question": "What are the key benefits of using FastAPI for building a high-performance backend service, and how does it differ from other Python web frameworks?",
+      "intent_type": "what",
+      "candidate_state": "engaged",
+      "skill_focus": "backend frameworks"
+    },
+    {
+      "question": "Can you describe a scenario where you had to optimize the performance of a microservice built using AWS services? What changes did you implement, and what were the results?",
+      "intent_type": "when",
+      "candidate_state": "engaged",
+      "skill_focus": "system optimization"
+    },
+    {
+      "question": "How would you design a secure authentication and authorization system using AWS Cognito and FastAPI? What considerations would you take into account for scalability and reliability?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "security and authentication"
+    },
+    {
+      "question": "Why do you think microservices architecture is a good fit for our company's needs, and how would you approach designing and implementing a microservices-based system?",
+      "intent_type": "why",
+      "candidate_state": "engaged",
+      "skill_focus": "system design"
+    },
+    {
+      "question": "Can you walk me through your process for debugging a complex issue in a distributed system built using microservices and AWS services? What tools and techniques would you use?",
+      "intent_type": "how",
+      "candidate_state": "engaged",
+      "skill_focus": "debugging and troubleshooting"
+    },
+    {
+      "question": "How do you stay up-to-date with the latest developments and best practices in the field of backend engineering, and can you give an example of a recent innovation or technique you've adopted in your work?",
+      "intent_type": "when",
+      "candidate_state": "engaged",
+      "skill_focus": "professional development"
+    }
+  ],
+  "current_index": 0,
+  "history": [],
+  "status": "running",
+  "version": 1,
+  "consecutive_failures": 0,
+  "total_failures": 0,
+  "terminated_reason": null,
+  "disengagement_count": 0,
+  "started_at": "2026-01-16T22:35:01.226630",
+  "topic_question_count": 0,
+  "max_questions_per_topic": 4,
+  "max_disengagements": 2,
+  "max_duration_minutes": 30
+}
