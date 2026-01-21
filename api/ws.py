@@ -1,5 +1,5 @@
 # api/ws.py
-from fastapi import FastAPI, WebSocket
+from fastapi import FastAPI, WebSocket, Request
 from interview_agent.runtime import InterviewRuntime
 from interview_agent.events import RuntimeEvent
 
@@ -7,15 +7,35 @@ from interview_agent.agent import InterviewAgent
 from interview_agent.state_store_file import FileStateStore
 from skill_engine import SkillEngine, SkillRegistry
 from llm.huggingface_client import HuggingFaceClient
+from llm.groq_client import GroqClient
+from fastapi.middleware.cors import CORSMiddleware
+from video_service.app import router as webrtc_router
+from video_service.webrtc import handle_offer
+
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],          # tighten later
+    allow_credentials=True,
+    allow_methods=["*"],          # includes OPTIONS
+    allow_headers=["*"],
+)
+
+app.include_router(webrtc_router)
 
 # ---- Boot dependencies ONCE ----
 registry = SkillRegistry()
 registry.load("./skills")
 
-llm = HuggingFaceClient(
-    model_id="meta-llama/Llama-3.1-8B-Instruct:novita",
+# llm = HuggingFaceClient(
+#     model_id="meta-llama/Llama-3.1-8B-Instruct:novita",
+#     stream=False,
+# )
+
+
+llm = GroqClient(
+    model_id="openai/gpt-oss-20b",
     stream=False,
 )
 
@@ -56,3 +76,10 @@ async def interview_ws(ws: WebSocket, session_id: str):
                 print(f"Started interview session: {real_interview_id}")
 
             await ws.send_json(response)
+
+
+@app.post("/webrtc/offer")
+async def webrtc_offer(request: Request):
+    offer = await request.json()
+    answer = await handle_offer(offer)
+    return answer
