@@ -1,0 +1,10 @@
+{
+  "interview_id": "demo-interview-1",
+  "scores": {
+    "1": {
+      "intent_score": 0.9,
+      "content_score": 0.7,
+      "feedforward": "Include a real-world example or further explanation to demonstrate the concept of abstraction in Java."
+    }
+  }
+}

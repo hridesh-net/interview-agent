@@ -29,9 +29,14 @@ class SkillExecutor:
                     user_input=input
                 )
                 
-                print("----- Raw Skill Output -----")
-                print(raw)
-                print(type(raw))
+                print("___RAW SKILL OUTPUT___")
+                self.logger.log(
+                    event="skill_execution_log",
+                    interview_id=trace.interview_id,
+                    trace_id=trace.trace_id,
+                    message=raw,
+                )
+                
                 
                 parsed = extract_json(raw)
 

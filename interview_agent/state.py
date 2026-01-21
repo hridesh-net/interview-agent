@@ -1,15 +1,25 @@
 from dataclasses import dataclass, field, asdict
-from typing import List, Dict
+from typing import List, Dict, Optional
 import uuid
 import time
+from datetime import datetime
+
+
+def _serialize(value):
+    if isinstance(value, datetime):
+        return value.isoformat()
+    if isinstance(value, list):
+        return [_serialize(v) for v in value]
+    if isinstance(value, dict):
+        return {k: _serialize(v) for k, v in value.items()}
 
 
 @dataclass
 class QARecord:
     question: str
     answer: str
-    intent_analysis: Dict
-    score: Dict
+    intent_analysis: Optional[Dict] = None
+    score: Optional[Dict] = None
     timestamp: float = field(default_factory=time.time)
 
 
@@ -26,6 +36,15 @@ class InterviewState:
     total_failures: int = 0
     terminated_reason: str | None = None
     disengagement_count: int = 0
+    started_at: datetime = datetime.utcnow().isoformat()
+
+    topic_question_count: int = 0
+    max_questions_per_topic: int = 4
+
+    disengagement_count: int = 0
+    max_disengagements: int = 2
+
+    max_duration_minutes: int = 30
 
     def to_dict(self):
         return asdict(self)
@@ -37,7 +56,7 @@ class InterviewState:
             jd=data["jd"],
             questions=data["questions"],
             current_index=data["current_index"],
-            status=data["status"],
+            status=data.get("status") or "initialized",
             version=data.get("version", 1),
         )
 
