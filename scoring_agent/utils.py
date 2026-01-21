@@ -1,6 +1,6 @@
 import json
 import re
-from typing import Any, Dict
+from typing import Any, Dict, List
 
 
 class JSONExtractionError(Exception):
@@ -13,37 +13,52 @@ JSON_FENCE_RE = re.compile(
 )
 
 
+def _find_all_json_candidates(text: str) -> List[str]:
+    """
+    Find all brace-balanced JSON-like substrings.
+    """
+    candidates = []
+    stack = []
+    start_idx = None
+
+    for i, ch in enumerate(text):
+        if ch == "{":
+            if not stack:
+                start_idx = i
+            stack.append(ch)
+        elif ch == "}":
+            if stack:
+                stack.pop()
+                if not stack and start_idx is not None:
+                    candidates.append(text[start_idx : i + 1])
+                    start_idx = None
+
+    return candidates
+
+
 def extract_json(text: str) -> Dict[str, Any]:
     """
     Extract the first valid JSON object from LLM output.
-    Supports fenced ```json blocks and inline JSON.
+    Supports:
+    - ```json fenced blocks
+    - Multiple inline JSON objects
     """
 
-    # 1️⃣ Prefer fenced ```json blocks
-    fence_match = JSON_FENCE_RE.search(text)
-    if fence_match:
-        candidate = fence_match.group(1)
+    # 1️⃣ Try fenced blocks first
+    fence_matches = JSON_FENCE_RE.findall(text)
+    for block in fence_matches:
+        try:
+            return json.loads(block)
+        except json.JSONDecodeError:
+            continue
+
+    # 2️⃣ Extract all brace-balanced candidates
+    candidates = _find_all_json_candidates(text)
+
+    for candidate in candidates:
         try:
             return json.loads(candidate)
         except json.JSONDecodeError:
-            pass  # fall through
+            continue
 
-    # 2️⃣ Fallback: brace-balanced scan
-    start = text.find("{")
-    if start == -1:
-        raise JSONExtractionError("No JSON object found in text.")
-
-    brace_count = 0
-    for i in range(start, len(text)):
-        if text[i] == "{":
-            brace_count += 1
-        elif text[i] == "}":
-            brace_count -= 1
-            if brace_count == 0:
-                candidate = text[start : i + 1]
-                try:
-                    return json.loads(candidate)
-                except json.JSONDecodeError:
-                    break
-
-    raise JSONExtractionError("Failed to extract valid JSON object.")
+    raise JSONExtractionError("No valid JSON object found in model output.")

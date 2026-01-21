@@ -5,14 +5,20 @@ from interview_agent.agent import InterviewAgent
 from interview_agent.state_store_file import FileStateStore
 from skill_engine import SkillEngine, SkillRegistry
 from llm.huggingface_client import HuggingFaceClient
+from llm.groq_client import GroqClient
 
 app = FastAPI()
 
 registry = SkillRegistry()
 registry.load("./skills")
 
-llm = HuggingFaceClient(
-    model_id="meta-llama/Llama-3.1-8B-Instruct:novita",
+# llm = HuggingFaceClient(
+#     model_id="meta-llama/Llama-3.1-8B-Instruct:novita",
+#     stream=False,
+# )
+
+llm = GroqClient(
+    model_id="openai/gpt-oss-20b",
     stream=False,
 )
 
