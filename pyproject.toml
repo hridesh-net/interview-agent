@@ -17,5 +17,9 @@ dependencies = [
     "aiortc",
     "av",
     "numpy",
-    "opencv-python"
+    "opencv-python",
+    "torch",
+    "transformers",
+    "diffusers",
+    "sentence-transformers",
 ]
