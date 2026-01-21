@@ -13,5 +13,9 @@ dependencies = [
     "boto3",
     "dapr",
     "fastapi[standard]",
-    "uvicorn"
+    "uvicorn",
+    "aiortc",
+    "av",
+    "numpy",
+    "opencv-python"
 ]
