@@ -3,12 +3,13 @@ import numpy as np
 from aiortc import VideoStreamTrack
 from av import VideoFrame
 
-from vl_jepa_service.frames import get_frame_queue
+from vl_jepa_service.frames import get_frame_queue as vj_queue
+from vljepa2_service.frames import get_frame_queue as vljepa2_queue
 
 class VideoTrackConsumer:
     def __init__(self, peer_id: str):
         self.peer_id = peer_id
-        self.queue = get_frame_queue(peer_id)
+        self.queue = vj_queue(peer_id)
 
     async def consume(self, track: VideoStreamTrack):
         while True:

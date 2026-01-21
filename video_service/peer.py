@@ -20,6 +20,15 @@ class Peer:
         self.video_consumer = VideoTrackConsumer(peer_id)
         
         asyncio.create_task(vl_jepa_loop(peer_id))
+        
+        # USE_VJEPA2 = False
+        
+        # if USE_VJEPA2:
+        #     from vljepa2_service.engine import vljepa2_loop
+        #     asyncio.create_task(vljepa2_loop(peer_id))
+        # else:
+        #     from vl_jepa_service.engine import vl_jepa_loop
+        #     asyncio.create_task(vl_jepa_loop(peer_id))
 
         @self.pc.on("track")
         def on_track(track):

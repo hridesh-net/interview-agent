@@ -22,4 +22,6 @@ dependencies = [
     "transformers",
     "diffusers",
     "sentence-transformers",
+    "torchvision",
+    "torchaudio",
 ]
