@@ -94,15 +94,7 @@ async def vl_jepa_loop(peer_id: str):
             )
 
             state.previous_label = current_label
-        
-            PerceptionContext.update(
-                peer_id=peer_id,
-                data={
-                    "scene": sentence,
-                    "object": current_label,
-                    "confidence": round(confidence, 3),
-                }
-            )
+
             save_perception_state(
                 interview_id=peer_id,
                 data={
