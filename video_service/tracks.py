@@ -24,5 +24,3 @@ class VideoTrackConsumer:
                     pass
 
             await self.queue.put(img)
-
-            print(f"[{self.peer_id}] Frame enqueued:", img.shape)

@@ -16,7 +16,7 @@ class GroqClient:
         api_key: str | None = None,
         base_url: str = "https://api.groq.com/openai/v1",
         temperature: float = 0.2,
-        max_tokens: int = 512,
+        max_tokens: int = 1000,
         stream: bool = False,
     ):
         self.model = model_id
@@ -51,7 +51,7 @@ class GroqClient:
             max_tokens=self.max_tokens,
         )
         print("___RESPONSE___")
-        print(response)
+        print(response.choices[0].message.content)
 
         return response.choices[0].message.content
 
