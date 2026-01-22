@@ -5,6 +5,7 @@ import torch.nn.functional as F
 from vl_jepa_service.frames import get_frame_queue
 from vl_jepa_service.models import VLJEPAModels
 from vl_jepa_service.state import VLJEPAState
+from vl_jepa_service.context import PerceptionContext, save_perception_state
 
 OBJECTS = [
     "person", "laptop", "phone", "cup", "table",
@@ -93,6 +94,24 @@ async def vl_jepa_loop(peer_id: str):
             )
 
             state.previous_label = current_label
+        
+            PerceptionContext.update(
+                peer_id=peer_id,
+                data={
+                    "scene": sentence,
+                    "object": current_label,
+                    "confidence": round(confidence, 3),
+                }
+            )
+            save_perception_state(
+                interview_id=peer_id,
+                data={
+                    "scene_description": sentence,
+                    "object": current_label,
+                    "confidence": round(confidence, 3),
+                    "changed": True,
+                }
+            )
 
         print(
             f"[VL-JEPA][{peer_id}]",

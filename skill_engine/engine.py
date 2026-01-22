@@ -54,6 +54,7 @@ class SkillEngine:
         
         normalized_input = _normalize_user_input(user_input)
 
+        # try 
         system, user = self.prompts.with_skill(
             skill,
             instructions,

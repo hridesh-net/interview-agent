@@ -6,14 +6,16 @@ from .state import InterviewState, QARecord
 from interview_agent.schemas import (
     QuestionGeneratorOutput,
     IntentEvaluationOutput,
-    ScoreOutput,
     FollowupQuestionOutput,
 )
 
 from interview_agent.dapr_publisher import publish_answer_event
-
 from interview_agent.trace import TraceContext
 from interview_agent.logger import JsonLogger
+
+# 🔹 Vision perception is session-level context (not skill-level)
+from vl_jepa_service.context import PerceptionContext as VISION_PERCEPTION
+from vl_jepa_service.context import load_perception_state
 
 
 class InterviewAgent:
@@ -22,6 +24,34 @@ class InterviewAgent:
         self.skills = SkillExecutor(skill_engine, logger=self.logger)
         self.store = state_store
 
+    # -----------------------------------------------------
+    # Vision Perception Injection (ONLY place it belongs)
+    # -----------------------------------------------------
+    def _with_vision_perception(self, *, interview_id: str, payload: dict):
+        """
+        Inject latest vision perception into LLM input if available.
+        SkillEngine remains completely interview-agnostic.
+        """
+        perception = VISION_PERCEPTION.get(interview_id=interview_id)
+        perception = load_perception_state(interview_id=interview_id)
+
+        if perception:
+            payload["vision_perception"] = {
+                "scene": perception["scene_description"],
+                "object": perception.get("object"),
+                "confidence": perception["confidence"],
+            }
+
+        if not perception:
+            return payload
+
+        # Shallow copy to avoid mutating original payload
+        enriched_payload = dict(payload)
+        return enriched_payload
+
+    # -----------------------------------------------------
+    # Interview lifecycle
+    # -----------------------------------------------------
     def start(self, jd_text: str):
         state = InterviewState(jd=jd_text)
         trace = TraceContext.create(state.interview_id)
@@ -36,94 +66,55 @@ class InterviewAgent:
             skill="question_generator_from_jd",
             input=jd_text,
             schema=QuestionGeneratorOutput,
-            trace=trace
+            trace=trace,
         ).questions
 
-        state.questions = questions
+        state.questions = [
+            q.model_dump() for q in questions
+        ]
         state.status = "running"
         self.store.save(state)
 
         return state
 
-    def start_or_resume(self, jd_text: str | None = None, interview_id: str | None = None):
+    def start_or_resume(
+        self,
+        jd_text: str | None = None,
+        interview_id: str | None = None,
+    ):
         if interview_id and self.store.exists(interview_id):
             state = self.store.load(interview_id)
-            
-            print("Resuming interview:")
 
             self.logger.log(
                 event="interview_resumed",
                 interview_id=state.interview_id,
             )
-
             return state
 
         if not jd_text:
             raise ValueError("jd_text is required to start a new interview")
 
-        state = InterviewState(jd=jd_text)
+        return self.start(jd_text)
 
-        trace = TraceContext.create(state.interview_id)
-
-        self.logger.log(
-            event="interview_started",
-            interview_id=state.interview_id,
-            trace_id=trace.trace_id,
-        )
-
-        questions = self.skills.run(
-            skill="question_generator_from_jd",
-            input=jd_text,
-            schema=QuestionGeneratorOutput,
-            trace=trace
-        )
-        
-        print("Generated Questions:")
-        print(questions)
-        print(type(questions))
-        
-        self.logger.log(
-            event="question_generated",
-            interview_id=state.interview_id,
-            trace_id=trace.trace_id,
-            questions=len(questions.questions),
-        )
-
-        state.questions = [
-            q.model_dump() for q in questions.questions
-        ]
-        state.status = "running"
-        
-        self.logger.log(
-            event="state_generated",
-            interview_id=state.interview_id,
-            trace_id=trace.trace_id,
-            state=state.to_dict(),
-        )
-        self.store.save(state)
-
-        return state
-
+    # -----------------------------------------------------
+    # Interview flow
+    # -----------------------------------------------------
     def next_question(self, state):
         return state.questions[state.current_index]["question"]
 
     def submit_answer(self, interview_id: str, answer: str):
         # -----------------------------
-        # Load state FIRST
+        # Load state
         # -----------------------------
         state = self.store.load(interview_id)
-        print(state.status)
-        print("----")
-        print(state.to_dict())
-        print(interview_id)
-        print("----")
-        
 
         if state.status != "running":
-            raise RuntimeError(f"Interview is not active, current status: {state.status}")
+            raise RuntimeError(
+                f"Interview is not active, current status: {state.status}"
+            )
 
         # -----------------------------
-        # Time guard (30 min)
+        # Time guard
         # -----------------------------
         elapsed = datetime.utcnow() - datetime.fromisoformat(state.started_at)
         if elapsed > timedelta(minutes=state.max_duration_minutes):
@@ -133,43 +124,56 @@ class InterviewAgent:
             return state
 
         trace = TraceContext.create(state.interview_id)
-        q = state.questions[state.current_index]["question"]
+        question = state.questions[state.current_index]["question"]
 
         # -----------------------------
-        # Intent evaluation
+        # Intent evaluation (VISION-AWARE)
         # -----------------------------
         intent = self.skills.run(
             skill="answer_intent_evaluator",
-            input={"question": q, "answer": answer},
+            input=self._with_vision_perception(
+                interview_id=state.interview_id,
+                payload={
+                    "question": question,
+                    "answer": answer,
+                },
+            ),
             schema=IntentEvaluationOutput,
-            trace=trace
+            trace=trace,
         )
 
         # -----------------------------
         # Persist answer immediately
         # -----------------------------
-        state.history.append(QARecord(q, answer, intent.model_dump()))
+        state.history.append(
+            QARecord(question, answer, intent.model_dump())
+        )
 
-        publish_answer_event({
-            "interview_id": state.interview_id,
-            "turn_id": state.current_index,
-            "question": q,
-            "answer": answer,
-            "timestamp": datetime.utcnow().isoformat(),
-        })
+        publish_answer_event(
+            {
+                "interview_id": state.interview_id,
+                "turn_id": state.current_index,
+                "question": question,
+                "answer": answer,
+                "timestamp": datetime.utcnow().isoformat(),
+            }
+        )
 
         # -----------------------------
-        # Follow-up decision (LLM-guided)
+        # Follow-up decision (VISION-AWARE)
         # -----------------------------
         followup = self.skills.run(
             skill="followup_question_generator",
-            input={
-                "previous_question": q,
-                "answer": answer,
-                "intent_analysis": intent.model_dump(),
-            },
+            input=self._with_vision_perception(
+                interview_id=state.interview_id,
+                payload={
+                    "previous_question": question,
+                    "answer": answer,
+                    "intent_analysis": intent.model_dump(),
+                },
+            ),
             schema=FollowupQuestionOutput,
-            trace=trace
+            trace=trace,
         )
 
         state_signal = followup.candidate_state or "engaged"
@@ -202,7 +206,8 @@ class InterviewAgent:
 
         if (
             action == "followup"
-            and state.topic_question_count < state.max_questions_per_topic
+            and state.topic_question_count
+            < state.max_questions_per_topic
             and followup.followup_question
         ):
             state.questions.insert(
@@ -211,16 +216,15 @@ class InterviewAgent:
                     "question": followup.followup_question,
                     "intent_type": followup.intent_type,
                     "skill_focus": "follow-up",
-                }
+                },
             )
             state.current_index += 1
         else:
-            # Move to next topic
             state.current_index += 1
             state.topic_question_count = 0
 
         # -----------------------------
-        # End interview if no questions left
+        # Completion
         # -----------------------------
         if state.current_index >= len(state.questions):
             state.status = "completed"

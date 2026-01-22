@@ -17,7 +17,7 @@ From the Job Description:
   - Conceptual understanding
   - Practical experience
   - Decision-making ability
-
+- remember to close json block and code block as well.
 ---
 
 ## Question Intent Types
@@ -68,7 +68,7 @@ If the candidate shows exit intent, do NOT generate a follow-up question.
 
 ## Output Requirements
 
-Generate **5–8 interview questions**.
+Generate **3–4 interview questions**.
 
 Each question must include:
 - The question text
